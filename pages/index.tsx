@@ -5,13 +5,13 @@ import Head from 'next/head'
 export default function Home() {
   return (
     <>
-      <Head><title>
-        Sign Up
-      </title></Head>
+      <Head>
+        <title>Sign Up</title>
+      </Head>
       
-      <Header></Header>
+      <Header/>
       
-      <Footer></Footer>
+      <Footer/>
       
       
     </>
