@@ -7,7 +7,7 @@ export default function Home() {
   return (
     <>
       <Head>
-        <title>Sign Up</title>
+        <title>HSHacks - Sign Up</title>
       </Head>
       
       <Header/>
