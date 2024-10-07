@@ -15,9 +15,9 @@ export default function Home() {
 
   return (
     <>
-      <Head><title>
-        Sign Up
-      </title></Head>
+      <Head>
+        <title>Sign Up</title>
+      </Head>
       
       <Header></Header>
       <div className="flex items-center justify-center bg-none">
@@ -29,9 +29,7 @@ export default function Home() {
       </div>
       
       
-      <Footer></Footer>
-      
-      
+      <Footer/>
     </>
   );
 }

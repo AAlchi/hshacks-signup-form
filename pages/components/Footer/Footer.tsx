@@ -27,7 +27,11 @@ const Footer = () => {
                 <h1 className='pb-2'>Quick Links</h1>
                 <div className='border-t-2'></div>
                 <div className='flex flex-col gap-3 pt-5'> 
-                    <div className='flex gap-3 flex-wrap'>  
+                    <div className='flex gap-3 flex-wrap'>
+                        {/* <Button color='bg-gray-400' name='History' navigate='/history' icon=''/>
+                        <Button color='bg-gray-400' name='For Sponsors' navigate='/sponsors' icon=''/>
+                        <Button color='bg-gray-400' name='Register' navigate='/registeration' icon=''/>
+                        <Button color='bg-gray-400' name='Code of Conduct' navigate='/codeofconduct' icon=''/>  */}
                     </div>
                 </div>
             </div>
