@@ -1,7 +1,7 @@
 import Header from "./components/Header/Header";
 import Footer from "./components/Footer/Footer";
 import Head from 'next/head'
-import Register from "./Register/Register"
+import Register from "./register"
 import React from "react";
 
 
@@ -19,7 +19,7 @@ export default function Home() {
       
       <Header/>
       
-      <Register/>
+      
       <Footer/>
     </>
   );
