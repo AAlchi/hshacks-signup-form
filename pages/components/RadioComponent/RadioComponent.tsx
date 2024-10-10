@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useEffect } from 'react';
 
 interface RadioComponentInterface {
   name: string;
@@ -13,9 +14,11 @@ const RadioComponent: React.FC<RadioComponentInterface> = ({
 }) => {
   const [boxChecked, setBoxChecked] = useState("");
 
+  
+
   return (
     <div>
-      <p className="text-black">
+      <p className="text-black font-bold">
         {question}
       </p>
       
