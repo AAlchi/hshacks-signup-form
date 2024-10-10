@@ -28,13 +28,11 @@ const RadioComponent: React.FC<RadioComponentInterface> = ({
   
 
   return (
-    <div>
-      <p className="text-black font-bold">
+    <div className='w-full'>
+      <p className="text-black font-bold mb-3">
         {question}
-      </p>
-      
-      
-      <div className="grid grid-cols-2 gap-4 gap-x-16 w-[400px] text-black mb-5">
+      </p> 
+      <div className="grid grid-cols-2 gap-4 gap-x-16  text-black mb-5">
         {
           listOfNames.map((option, index) => (
             <div key={index} className="flex items-center">
