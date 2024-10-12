@@ -5,14 +5,14 @@ interface RadioComponentInterface {
   name: string;
   listOfNames: string[];
   question: string;
-  answer: (data: string) => void;
+  radioAnswer: (radioData: string) => void;
 }
 
 const RadioComponent: React.FC<RadioComponentInterface> = ({
   name,
   listOfNames,
   question,
-  answer
+  radioAnswer
 }) => {
   const [boxChecked, setBoxChecked] = useState("");
 
@@ -20,9 +20,9 @@ const RadioComponent: React.FC<RadioComponentInterface> = ({
 
   useEffect(() => {
     if (boxChecked) {
-      answer(`${boxChecked}`);
+      radioAnswer(`${boxChecked}`);
     }
-  }, [boxChecked, answer]);
+  }, [boxChecked, radioAnswer]);
   
 
   
