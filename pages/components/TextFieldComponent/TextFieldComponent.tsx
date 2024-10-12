@@ -35,13 +35,10 @@ const TextFieldComponent: React.FC<TextFieldComponentInterface> = ({
         {question}
       </p> 
       <div className="text-black mb-5">
-        {
-          
+        { 
             <div className="flex items-center">
-              <input value={textEntered} name={name} placeholder={placeHolder} type={type} onChange={(e) => setTextEntered(e.target.value)} className="mr-1 border-2 bg-slate-100 border-gray-400 rounded p-1"/>
-              
-            </div>
-          
+              <input value={textEntered} name={name} placeholder={placeHolder} type={type} onChange={(e) => setTextEntered(e.target.value)} className="mr-1 border-2 bg-slate-100 border-gray-400 w-full rounded p-1"/>           
+            </div> 
         }
       </div>
     </div>
