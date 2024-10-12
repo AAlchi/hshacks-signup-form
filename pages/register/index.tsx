@@ -1,19 +1,24 @@
-import RadioComponent from "../components/RadioComponent/RadioComponent";
+// import RadioComponent from "../components/RadioComponent/RadioComponent";
 import React, { useState } from "react";
+// import TextFieldComponent from "../components/TextFieldComponent/TextFieldComponent";
+
 
 const Register = () => {
 
-  const [data, setData] = useState([]); 
+  // const [data, setData] = useState([]); 
 
-  const handleRadioComponentData = (data: string) => { 
-    // setData(data);
-    console.log(data); 
+  const handleRadioComponentData = (radioData: string) => { 
+    console.log(radioData); 
+  };
+  const handleTextFieldComponentData = (textFieldData: string) => { 
+    console.log(textFieldData); 
   };
 
   return(
   <div className="flex items-center justify-center bg-none">
     <div className="bg-white inline-block rounded w-[600px] p-6 mt-[85px]">
-      <RadioComponent question={"What grade are you in?"} name={"grade"} listOfNames={["9","10","11", "12"]} answer={handleRadioComponentData}/>
+      {/* <TextFieldComponent placeHolder="First Name" name="name" question="What is your name?" type="text" textFieldAnswer={handleTextFieldComponentData}/> */}
+      {/* <RadioComponent question={"What grade are you in?"} name={"grade"} listOfNames={["9","10","11", "12"]} radioAnswer={handleRadioComponentData}/> */}
       {/* <RadioComponent question={"What is your shirt size?"} name={"shirtSize"} listOfNames={["SM","MD","LG", "XL"]}/>
       <RadioComponent question={"Do you have a laptop you can bring?\n(Unfortunately, we aren't able to provide laptops this year.)"} name={"laptop"} listOfNames={["Yes: Please bring it!","No"]}/> */}
     </div>
