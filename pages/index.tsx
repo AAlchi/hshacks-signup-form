@@ -1,16 +1,25 @@
-import Header from "./components/header/Header";
-import Footer from "./components/footer/Footer";
+import Header from "./components/Header/Header";
+import Footer from "./components/Footer/Footer";
 import Head from 'next/head'
+import Register from "./register"
+import React from "react";
+
+
 
 
 export default function Home() {
+
+  
+
   return (
     <>
       <Head>
-        <title>HSHacks - Sign Up</title>
+        <title>Register</title>
       </Head>
       
       <Header/>
+      
+      <Register />
       
       <Footer/>
     </>
