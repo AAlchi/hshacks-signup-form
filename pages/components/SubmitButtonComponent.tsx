@@ -13,10 +13,7 @@ const SubmitButtonComponent: React.FC<SubmitButtonComponentProps> = ({
   };
 
   return (
-    <button 
-      onClick={handleSubmit} 
-      className="bg-blue-500 text-white p-2 rounded"
-    >
+    <button onClick={handleSubmit} className="bg-blue-500 text-white p-2 rounded hover:opacity-50 transition px-4">
       Submit
     </button>
   );
