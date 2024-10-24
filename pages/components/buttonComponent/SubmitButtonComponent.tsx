@@ -1,10 +1,10 @@
 import React from 'react';
 
-interface SubmitButtonComponentProps {
+interface ButtonComponentProps {
   responses: { [key: string]: string };
 }
 
-const SubmitButtonComponent: React.FC<SubmitButtonComponentProps> = ({
+const ButtonComponent: React.FC<ButtonComponentProps> = ({
   responses,
 }) => {
   const handleSubmit = () => {
@@ -19,4 +19,4 @@ const SubmitButtonComponent: React.FC<SubmitButtonComponentProps> = ({
   );
 };
 
-export default SubmitButtonComponent;
+export default ButtonComponent;
