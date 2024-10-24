@@ -24,7 +24,7 @@ const TextFieldComponent: React.FC<TextFieldComponentInterface> = ({
     if (textEntered !== "") {
       textFieldAnswer(`${textEntered}`);
     }
-  }, [textEntered, textFieldAnswer]);
+  }, [textEntered]);
   
   
   

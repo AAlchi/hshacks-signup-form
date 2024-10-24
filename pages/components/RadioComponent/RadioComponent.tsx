@@ -22,7 +22,7 @@ const RadioComponent: React.FC<RadioComponentInterface> = ({
     if (boxChecked) {
       radioAnswer(`${boxChecked}`);
     }
-  }, [boxChecked, radioAnswer]);
+  }, [boxChecked]);
   
 
   
