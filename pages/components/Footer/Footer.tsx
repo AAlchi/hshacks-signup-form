@@ -1,7 +1,7 @@
 import Image from 'next/image'
-import React from 'react'
+import React from 'react'  
+import ContactBlock from './ContactBlock'
 import Map from './Map'
-import ContactBlock from './ContactBlock' 
 
 const Footer = () => {
     return (
