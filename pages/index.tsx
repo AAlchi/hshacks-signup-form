@@ -1,9 +1,9 @@
-import Header from "./components/header/Header";
-import Footer from "./components/footer/Footer";
+import Header from "./components/Header/Header";
+import Footer from "./components/Footer/Footer";
 import Head from 'next/head'
 import Register from "./register"
 import React from "react";
-
+import SignedUpComponent from "./components/SignedUpComplete/SignedUpComplete";
 
 
 
@@ -19,7 +19,8 @@ export default function Home() {
       
       <Header/>
       
-      <Register />
+      {/* <Register /> */}
+      <SignedUpComponent />
       
       <Footer/>
     </>
