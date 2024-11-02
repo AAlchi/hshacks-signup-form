@@ -3,7 +3,7 @@ import Footer from "./components/Footer/Footer";
 import Head from 'next/head'
 import Register from "./register"
 import React from "react";
-import SignedUpComponent from "./components/SignedUpComplete/SignedUpComplete";
+import RegistrationComplete from "./components/RegistrationComplete/RegistrationComplete";
 
 
 
@@ -20,7 +20,7 @@ export default function Home() {
       <Header/>
       
       {/* <Register /> */}
-      <SignedUpComponent />
+      <RegistrationComplete />
       
       <Footer/>
     </>
