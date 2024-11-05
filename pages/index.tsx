@@ -4,7 +4,7 @@ import Head from 'next/head'
 import Register from "./register"
 import React from "react";
 import RegistrationComplete from "./components/RegistrationComplete/RegistrationComplete";
-
+import TimeBoxComponent from "./components/TimeBoxComponent/TimeBoxComponent";
 
 
 export default function Home() {
@@ -19,9 +19,8 @@ export default function Home() {
       
       <Header/>
       
-      {/* <Register /> */}
-      <RegistrationComplete />
-      
+      <Register />
+      {/* <RegistrationComplete /> */}
       <Footer/>
     </>
   );
