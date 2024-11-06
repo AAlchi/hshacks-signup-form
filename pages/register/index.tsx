@@ -2,7 +2,7 @@
 import React, { useState } from "react"; 
 import ButtonComponent from "../components/buttonComponent/SubmitButtonComponent";
 import RadioComponent from "../components/radioComponent/RadioComponent";
-import TextFieldComponent from "../components/textfieldComponent/TextFieldComponent";
+import TextFieldComponent from "../components/textFieldComponent/TextFieldComponent";
 
 const Register = () => {
 
