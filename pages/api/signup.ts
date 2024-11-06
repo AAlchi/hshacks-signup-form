@@ -7,7 +7,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
     try {
         let {firstName, lastName, email, laptop, experience, grade, shirt, diet, other} = req.body;
         let errors = [];
-        const names: string[] = [firstName, lastName, email];
+        const names: string[] = [firstName, lastName];
         const explains: string[] = [experience, diet, other];
         const choices: any[] = [laptop, grade, shirt];
         const combinedArr = names.concat(email.concat(choices));
@@ -22,8 +22,10 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
         }
 
         for (var s of names) {
-            if (!namePattern.test(s)) {
+            let c = 0;
+            if (c == 0 && !namePattern.test(s)) {
                 errors.push("Name Error");
+                c++;
             }
         }
 
