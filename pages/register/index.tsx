@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import TextFieldComponent from "../components/TextFieldComponent/TextFieldComponent";
 import SubmitButtonComponent from "../components/SubmitButtonComponent";
 import TimeBoxComponent from "../components/TimeBoxComponent/TimeBoxComponent";
-
+        
 const Register = () => {
 
   // const [data, setData] = useState([]); 
