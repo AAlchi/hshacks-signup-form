@@ -1,12 +1,11 @@
-import Header from "./components/header/Header";
-import Footer from "./components/footer/Footer";
+import Header from "./components/Header/Header";
+import Footer from "./components/Footer/Footer";
 import Head from 'next/head'
 import Register from "./register"
 import React from "react";
 import RegistrationComplete from "./components/RegistrationComplete/RegistrationComplete";
 import TimeBoxComponent from "./components/TimeBoxComponent/TimeBoxComponent";
-
-
+import LoadingComponent from "./components/LoadingComponent/LoadingComponent";
 export default function Home() {
 
   
@@ -18,7 +17,6 @@ export default function Home() {
       </Head>
       
       <Header/>
-      
       <Register />
       {/* <RegistrationComplete /> */}
       <Footer/>
