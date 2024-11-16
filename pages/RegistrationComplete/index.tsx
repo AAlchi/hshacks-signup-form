@@ -1,8 +1,25 @@
-import React from "react";
-import TimeBoxComponent from "../TimeBoxComponent/TimeBoxComponent";
+import { useState, useEffect } from "react";
+import TimeBoxComponent from "../components/TimeBoxComponent/TimeBoxComponent";
+import LoadingComponent from "../components/LoadingComponent/LoadingComponent";
+
+
+
 
 const RegistrationComplete = () => {
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setIsLoading(false);
+    }, 3000);
+
+    return () => clearTimeout(timer);
+  }, []);
+  
   return(
+    isLoading ? (
+      <LoadingComponent/>
+    ) : (
     <div className="h-screen flex items-center justify-center bg-none">
       <div className="flex flex-col items-center justify-center bg-white rounded w-[600px] px-6 py-10 mx-5 text-black relative">
         <div className="visible lg:invisible absolute top-4"><TimeBoxComponent/></div>
@@ -25,5 +42,6 @@ const RegistrationComplete = () => {
     
 
   )
+)
 }
 export default RegistrationComplete;
