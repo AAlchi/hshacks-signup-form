@@ -3,7 +3,7 @@ import Footer from "./components/Footer/Footer";
 import Head from 'next/head'
 import Register from "./register"
 import React from "react";
-import RegistrationComplete from "./components/RegistrationComplete/RegistrationComplete";
+import RegistrationComplete from "./RegistrationComplete";
 import TimeBoxComponent from "./components/TimeBoxComponent/TimeBoxComponent";
 import LoadingComponent from "./components/LoadingComponent/LoadingComponent";
 export default function Home() {
