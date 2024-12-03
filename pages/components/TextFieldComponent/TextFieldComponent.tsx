@@ -6,6 +6,7 @@ interface TextFieldComponentInterface {
   placeHolder: string;
   type: string;
   question: string;
+  subtext?: string;
   textFieldAnswer: (textFieldData: string) => void;
 }
 
@@ -14,6 +15,7 @@ const TextFieldComponent: React.FC<TextFieldComponentInterface> = ({
   placeHolder,
   type,
   question,
+  subtext,
   textFieldAnswer
 }) => {
   const [textEntered, setTextEntered] = useState("");
@@ -31,13 +33,16 @@ const TextFieldComponent: React.FC<TextFieldComponentInterface> = ({
 
   return (
     <div className='w-full'>
-      <p className="text-black font-bold mb-3">
-        {question}
-      </p> 
+      <div className='mb-3'>
+        <p className="text-black font-bold">
+          {question}
+        </p> 
+        {subtext && <p className='text-slate-500 text-sm'>{subtext}</p>}     
+      </div>
       <div className="text-black mb-5">
         { 
-            <div className="flex items-center">
-              <input value={textEntered} name={name} placeholder={placeHolder} type={type} onChange={(e) => setTextEntered(e.target.value)} className="mr-1 border-2 bg-slate-100 border-gray-400 w-full rounded p-1"/>           
+            <div className="flex flex-col items-center">
+              <input value={textEntered} name={name} placeholder={placeHolder} type={type} onChange={(e) => setTextEntered(e.target.value)} className="border-2 bg-slate-100 border-gray-400 w-full rounded pl-2 py-1"/>     
             </div> 
         }
       </div>
