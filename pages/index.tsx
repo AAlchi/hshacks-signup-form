@@ -13,7 +13,7 @@ export default function Home() {
   return (
     <>
       <Head>
-        <title>Register</title>
+        <title>HSHacks | Registration</title>
       </Head>
       
       <Header/>
