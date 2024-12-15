@@ -37,13 +37,12 @@ const Register = () => {
 
 
   return (
-    <div className="flex items-center justify-center bg-none relative py-10">
+    <div className="flex items-center justify-center bg-none relative py-10" style={{overflow: "hidden"}}>
       <div className="bg-white flex flex-col rounded w-[600px] p-6 mt-[85px] relative">
         <div className="flex items-center justify-start">
           <img style={{ width: "200px" }} src="./HSHacks_Logo.png" alt="HSHacks_Logo" />
           <p className="text-2xl pl-2 text-black">| Registration</p>
-        </div> 
-        <div className="my-6 lg:m-0"></div>
+        </div>   
         {step == 0 && (
           <>
             <InformationComponent name="General Information" />
@@ -63,7 +62,10 @@ const Register = () => {
             <TextFieldComponent placeHolder="AP Computer Science A, etc." subtext="This doesn't make a difference! Just for us to know. You can participate regardless of experience level." name="experience" question="What's Your Experience Level In Programming?" type="text" textFieldAnswer={(textFieldData) => handleTextFieldComponentData("firstName", textFieldData)} />
             <RadioComponent question={"Grade Level"} name="gradeLevel" listOfNames={["9", "10", "11", "12"]} radioAnswer={(radioData) => handleRadioComponentData("grade", radioData)} />
             <RadioComponent question={"T-Shirt Size?"} name={"shirtSize"} listOfNames={["SM", "MD", "LG", "XL"]} radioAnswer={(radioData) => handleRadioComponentData("shirtSize", radioData)} />
-            <ButtonComponent name="Next" onClick={() => setStep(2)} />
+            <div className="flex w-full gap-2">
+              <ButtonComponent name="Back" secondary onClick={() => setStep(0)} />
+              <ButtonComponent name="Next" onClick={() => setStep(2)} />
+            </div>
           </>
         )}
         
@@ -72,7 +74,10 @@ const Register = () => {
             <InformationComponent name="Additional Information" />
             <TextFieldComponent placeHolder="Peanuts, gluten, lactose" name="dietaryRestrictions" question="Dietary Restrictions" type="text" textFieldAnswer={(textFieldData) => handleTextFieldComponentData("email", textFieldData)} />
             <TextFieldComponent placeHolder="Lorem ipsum dolor sit amet." name="anythingElse" question="Anything Else We Should Know?" type="text" textFieldAnswer={(textFieldData) => handleTextFieldComponentData("email", textFieldData)} />
-            <SubmitButtonComponent responses={responses} onClick={redirect} />
+            <div className="flex w-full gap-2">
+              <ButtonComponent name="Back" secondary onClick={() => setStep(1)} />
+              <SubmitButtonComponent responses={responses} onClick={redirect} />
+            </div>
           </>
         )}
       </div>

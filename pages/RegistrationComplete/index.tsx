@@ -30,7 +30,7 @@ const RegistrationComplete = () => {
       {isLoading ? (
         <LoadingComponent />
       ) : (
-        <div className="h-screen flex items-center justify-center bg-none">
+        <div className="h-screen flex items-center justify-center bg-none" style={{overflow: "none"}}>
           <div className="flex flex-col items-center justify-center bg-white rounded w-[600px] px-6 py-10 mx-5 text-black relative">
 
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="mt-5 size-20">
