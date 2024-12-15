@@ -2,11 +2,13 @@ import React from 'react';
 
 interface ButtonComponentProps {
   name: string;
+  secondary?: boolean;
   onClick: () => void;
 }
 
 const ButtonComponent: React.FC<ButtonComponentProps> = ({
   name,
+  secondary,
   onClick,
 }) => {
   const handleSubmit = () => { 
@@ -16,7 +18,7 @@ const ButtonComponent: React.FC<ButtonComponentProps> = ({
   
 
   return (
-    <button onClick={handleSubmit} className="bg-blue-500 text-white p-2 rounded hover:opacity-50 transition px-4">
+    <button onClick={handleSubmit} className={`${secondary ? "bg-slate-500" : "bg-blue-500"} w-full text-white p-2 rounded hover:opacity-50 transition px-4`}>
       {name}
     </button>
   );
