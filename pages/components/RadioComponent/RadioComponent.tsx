@@ -6,7 +6,9 @@ interface RadioComponentInterface {
   listOfNames: string[];
   question: string;
   subtext?: string;
-  radioAnswer: (radioData: string) => void;
+  chosenElement: any;
+  required?: boolean;
+  onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
 }
 
 const RadioComponent: React.FC<RadioComponentInterface> = ({
@@ -14,35 +16,32 @@ const RadioComponent: React.FC<RadioComponentInterface> = ({
   listOfNames,
   question,
   subtext,
-  radioAnswer
-}) => {
-  const [boxChecked, setBoxChecked] = useState("");
-
-  
-
-  useEffect(() => {
-    if (boxChecked) {
-      radioAnswer(`${boxChecked}`);
-    }
-  }, [boxChecked]);
-  
+  chosenElement,
+  required,
+  onChange
+}) => { 
 
   
 
   return (
     <div className='w-full'>
       <div className='mb-3'>
-        <p className="text-black font-bold">
+        <div className="text-black flex gap-1 font-bold">
           {question}
-        </p> 
+          {required && (
+            <p title="This field is required" style={{color: "red"}}>
+              *
+            </p>
+          )}
+        </div> 
         {subtext && <p className='text-slate-500 text-sm'>{subtext}</p>}     
       </div>
       <div className="grid grid-cols-2 gap-4 gap-x-16  text-black mb-5">
         {
           listOfNames.map((option, index) => (
             <div key={index} className="flex items-center">
-              <input value={option} checked={option === boxChecked} name={name} type='radio' onChange={() => setBoxChecked(option)} className="mr-1"/>
-              {option}
+              <input required value={option} checked={chosenElement == option} name={name} type='radio' onChange={onChange} className="mr-1"/>
+              {option} 
             </div>
           ))
         }
