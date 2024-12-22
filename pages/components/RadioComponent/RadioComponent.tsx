@@ -19,10 +19,7 @@ const RadioComponent: React.FC<RadioComponentInterface> = ({
   chosenElement,
   required,
   onChange
-}) => { 
-
-  
-
+}) => {  
   return (
     <div className='w-full'>
       <div className='mb-3'>
@@ -40,7 +37,7 @@ const RadioComponent: React.FC<RadioComponentInterface> = ({
         {
           listOfNames.map((option, index) => (
             <div key={index} className="flex items-center">
-              <input required value={option} checked={chosenElement == option} name={name} type='radio' onChange={onChange} className="mr-1"/>
+              <input required={required} value={option} checked={chosenElement == option} name={name} type='radio' onChange={onChange} className="mr-1"/>
               {option} 
             </div>
           ))
