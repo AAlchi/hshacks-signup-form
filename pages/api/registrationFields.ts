@@ -31,7 +31,7 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
         },
         {
           group: 0,
-          type: "text",
+          type: "email",
           component: "TextFieldComponent",
           required: true,
           props: {
@@ -114,7 +114,7 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
             placeHolder: "Other information",
             type: "text", 
             question: "Other information",
-            subtext: "Please read over our Code of Conduct before submitting.",
+            subtext: "",
           },
         },
       ]
