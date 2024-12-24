@@ -1,21 +1,19 @@
 import React, { useState } from 'react';
 import { useEffect } from 'react';
 
-interface TextFieldComponentInterface {
+interface ParagraphComponentInterface {
   name: string;
-  placeHolder: string;
-  type: string; 
+  placeHolder: string; 
   question: string;
   subtext?: string;
   value: any;
   required?: boolean;
-  onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
+  onChange?: (e: React.ChangeEvent<HTMLTextAreaElement>) => void;
 }
 
-const TextFieldComponent: React.FC<TextFieldComponentInterface> = ({
+const ParagraphComponent: React.FC<ParagraphComponentInterface> = ({
   name,
-  placeHolder,
-  type, 
+  placeHolder, 
   question,
   subtext,
   value,
@@ -37,13 +35,14 @@ const TextFieldComponent: React.FC<TextFieldComponentInterface> = ({
       </div>
       <div className="text-black mb-5">
         { 
-            <div className="flex flex-col items-center">
-              <input maxLength={70} required={required} name={name} value={value} placeholder={placeHolder} type={type} onChange={onChange} className="border-2 bg-slate-100 border-gray-400 w-full rounded pl-2 py-1"/>     
+            <div className="flex flex-col items-end">
+              <textarea maxLength={400} required={required} name={name} value={value} placeholder={placeHolder} onChange={onChange} className="border-2 bg-slate-100 border-gray-400 w-full rounded pl-2 py-1"/>     
+              <p className='pt-1 text-sm text-slate-500'>Maximum of 400 Characters</p>
             </div> 
         }
       </div>
     </div>
   );
-}
+} 
 
-export default TextFieldComponent;
+export default ParagraphComponent;
