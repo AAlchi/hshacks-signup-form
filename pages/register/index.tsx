@@ -10,17 +10,18 @@ import axios from "axios";
 import { toast } from "react-toastify";
 import Link from "next/link";
 import ReCAPTCHA from 'react-google-recaptcha';
+import ParagraphComponent from "../components/ParagraphComponent/ParagraphComponent";
 
 interface FormData {
   firstName: string;
   lastName: string;
   email: string;
-  isLaptopAvailable: boolean;
+  laptop: string;
   experience: string;
   grade: string;
   shirtSize: string;
   dietaryRestrictions: string;
-  otherInformation: string;
+  otherInfo: string;
 }
 
 
@@ -31,12 +32,12 @@ const Register = () => {
     "firstName": "",
     "lastName": "",
     "email": "",
-    "isLaptopAvailable": false,
+    "laptop": "",
     "experience": "",
     "grade": "",
     "shirtSize": "",
     "dietaryRestrictions": "",
-    "otherInformation": ""
+    "otherInfo": ""
   });
   const [formFields, setFormFields] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
@@ -65,7 +66,8 @@ const Register = () => {
   }, []);
 
   const redirect = () => {
-    router.push("./RegistrationComplete");
+    console.log(formData)
+    router.push("/RegistrationComplete");
   };
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -84,11 +86,13 @@ const Register = () => {
   }
 
   const handleNextStep = (e: React.ChangeEvent<HTMLInputElement>) => {
-
-    if (step + 1 == 3) {
-      redirect;
-    } else {
       e.preventDefault();
+
+    if (step + 1 == 3) { 
+      setIsLoading(true);
+
+      redirect()
+    } else {
       setStep(step + 1);
     }
 
@@ -98,7 +102,7 @@ const Register = () => {
 
   useEffect(() => {
     const script = document.createElement('script');
-    script.src = 'https://www.google.com/recaptcha/enterprise.js?render=';
+    script.src = 'https://www.google.com/recaptcha/enterprise.js?render=6Lfb_6EqAAAAAIr31bUhEhpivGxSe4wbGgeCeSqx';
     script.async = true;
     document.head.appendChild(script);
 
@@ -124,6 +128,9 @@ const Register = () => {
                 {data.component == "TextFieldComponent" && data.group == step && (
                   <TextFieldComponent required={data.required} name={data.props.name} subtext={data.props.subtext} placeHolder={data.props.placeHolder} question={data.props.question} onChange={(e) => handleInputChange(e)} type={data.type} value={formData[data.props.name as keyof FormData]} />
                 )}
+                {data.component == "ParagraphComponent" && data.group == step && (
+                  <ParagraphComponent required={data.required} name={data.props.name} subtext={data.props.subtext} placeHolder={data.props.placeHolder} question={data.props.question} onChange={(e) => handleInputChange(e as any)} value={formData[data.props.name as keyof FormData]} />
+                )}
                 {data.component == "RadioComponent" && data.group == step && (
                   <RadioComponent required={data.required} name={data.props.name} subtext={data.props.subtext} listOfNames={data.props.listOfNames} question={data.props.question} onChange={(e) => handleInputChange(e)} chosenElement={formData[data.props.name as keyof FormData]} />
                 )}
@@ -134,7 +141,7 @@ const Register = () => {
             {step == 2 && (
               <div className="flex flex-col gap-1">
                 <ReCAPTCHA
-                  sitekey=""
+                  sitekey="6Lfb_6EqAAAAAIr31bUhEhpivGxSe4wbGgeCeSqx"
                   onChange={handleRecaptchaChange}
                 />
                 <p className="text-slate-500 text-sm pb-2">Please read over the <Link style={{ color: "blue" }} href="/codeofconduct" target="_blank">HSHacks code of conduct</Link> before submiting</p>

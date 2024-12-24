@@ -1,6 +1,3 @@
-import { useState, useEffect } from "react";
-import TimeBoxComponent from "../components/TimeBoxComponent/TimeBoxComponent";
-import LoadingComponent from "../components/LoadingComponent/LoadingComponent";
 import Head from "next/head";
 import Header from "../components/Header/Header";
 import Footer from "../components/Footer/Footer";
@@ -8,16 +5,7 @@ import Footer from "../components/Footer/Footer";
 
 
 
-const RegistrationComplete = () => {
-  const [isLoading, setIsLoading] = useState(true);
-
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      setIsLoading(false);
-    }, 3000);
-
-    return () => clearTimeout(timer);
-  }, []);
+const RegistrationComplete = () => { 
 
   return (
     <>
@@ -25,11 +13,7 @@ const RegistrationComplete = () => {
         <title>HSHacks | Registration</title>
       </Head>
 
-      <Header />
-
-      {isLoading ? (
-        <LoadingComponent />
-      ) : (
+      <Header /> 
         <div className="h-screen flex items-center justify-center bg-none" style={{overflow: "none"}}>
           <div className="flex flex-col items-center justify-center bg-white rounded w-[600px] px-6 py-10 mx-5 text-black relative">
 
@@ -46,10 +30,7 @@ const RegistrationComplete = () => {
 
 
           </div>
-        </div>
-
-
-      )}
+        </div> 
       <Footer />
     </>
   )

@@ -57,7 +57,7 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
         {
           group: 1,
           type: "text",
-          component: "TextFieldComponent",
+          component: "ParagraphComponent",
           required: false,
           props: {
             name: "experience",
@@ -85,7 +85,7 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
           component: "RadioComponent",
           required: false,
           props: {
-            name: "tshirt",
+            name: "shirtSize",
             listOfNames: ["SM", "MD", "LG", "XL"],
             question: "T-shirt size",
             subtext: "", 
@@ -94,7 +94,7 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
         {
           group: 2,
           type: "text",
-          component: "TextFieldComponent",
+          component: "ParagraphComponent",
           required: false,
           props: {
             name: "dietaryRestrictions",
@@ -107,7 +107,7 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
         {
           group: 2,
           type: "text",
-          component: "TextFieldComponent",
+          component: "ParagraphComponent",
           required: false,
           props: {
             name: "otherInfo",
