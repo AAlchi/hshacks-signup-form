@@ -11,7 +11,9 @@
   "dependencies": {
     "@nextui-org/checkbox": "^2.1.5",
     "@nextui-org/radio": "^2.1.5",
+    "@sendgrid/mail": "^8.1.4",
     "axios": "^1.7.9",
+    "firebase": "^11.2.0",
     "next": "^14.2.8",
     "react": "^18",
     "react-dom": "^18",

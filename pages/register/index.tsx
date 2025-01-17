@@ -67,6 +67,9 @@ const Register = () => {
 
   const redirect = () => {
     console.log(formData)
+
+    axios.post("/api/signup", formData);
+
     router.push("/RegistrationComplete");
   };
 
@@ -151,7 +154,7 @@ const Register = () => {
               {step != 0 && (
                 <ButtonComponent secondary name="Back" onClick={(e) => handlePreviousStep(e as any)} />
               )}
-              <ButtonComponent name={step == 2 ? "Submit" : "Next"} submit disabled={step == 2 && !recaptchaValue} />
+              <ButtonComponent name={step == 2 ? "Submit" : "Next"} submit onClick={(e) => redirect} disabled={step == 2 && !recaptchaValue} />
             </div> 
           </form>
         ) : (
