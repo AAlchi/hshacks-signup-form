@@ -147,7 +147,7 @@ const Register = () => {
                   sitekey="6Lfb_6EqAAAAAIr31bUhEhpivGxSe4wbGgeCeSqx"
                   onChange={handleRecaptchaChange}
                 />
-                <p className="text-slate-500 text-sm pb-2">Please read over the <Link style={{ color: "blue" }} href="/codeofconduct" target="_blank">HSHacks code of conduct</Link> before submiting</p>
+                <p className="text-slate-500 text-sm pb-2 py-2">Please read over the <Link style={{ color: "blue" }} href="/codeofconduct" target="_blank">HSHacks code of conduct</Link> before submiting</p>
               </div>
             )}
             <div className="flex gap-2 w-full">

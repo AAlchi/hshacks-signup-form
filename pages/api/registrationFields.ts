@@ -10,7 +10,7 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
           required: true,
           props: {
             name: "firstName",
-            placeHolder: "First Name",
+            placeHolder: "John",
             type: "text", 
             question: "First Name",
             subtext: "",
@@ -23,7 +23,7 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
           required: true,
           props: {
             name: "lastName",
-            placeHolder: "Last Name",
+            placeHolder: "Doe",
             type: "text", 
             question: "Last Name",
             subtext: "",
@@ -36,7 +36,7 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
           required: true,
           props: {
             name: "email",
-            placeHolder: "Email",
+            placeHolder: "john.doe@website.com",
             type: "text", 
             question: "Email",
             subtext: "",
@@ -61,7 +61,7 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
           required: false,
           props: {
             name: "experience",
-            placeHolder: "Your experience level",
+            placeHolder: "e.x. classes, projects, years of programming experience",
             type: "text", 
             question: "What is your experience level in programming?",
             subtext: "This doesn't make a difference! Just for us to know. You can participate regardless of experience level.",
@@ -76,7 +76,7 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
             name: "grade",
             listOfNames: ["9", "10", "11", "12"],
             question: "What grade are you in?",
-            subtext: "For other, please contact us at team@hshacks.org", 
+            subtext: "This year, we are only accepting participants in grades 9-12", 
           },
         },
         {
@@ -88,7 +88,7 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
             name: "shirtSize",
             listOfNames: ["SM", "MD", "LG", "XL"],
             question: "T-shirt size",
-            subtext: "", 
+            subtext: "While this field is optional, we highly recommend selecting an option to better help us with picking t-shirt sizes", 
           },
         },
         {
@@ -98,7 +98,7 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
           required: false,
           props: {
             name: "dietaryRestrictions",
-            placeHolder: "Ex: Peanuts, gluten, lactose",
+            placeHolder: "e.x. Peanuts, gluten, lactose",
             type: "text", 
             question: "Dietary restrictions",
             subtext: "Ex: Peanuts, gluten, lactose",
@@ -111,7 +111,7 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
           required: false,
           props: {
             name: "otherInfo",
-            placeHolder: "Other information",
+            placeHolder: "",
             type: "text", 
             question: "Other information",
             subtext: "",
