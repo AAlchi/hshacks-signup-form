@@ -18,7 +18,6 @@ export default function Home() {
       
       <Header/>
       <Register />
-      {/* <RegistrationComplete /> */}
       <Footer/>
     </>
   );

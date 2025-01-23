@@ -28,7 +28,7 @@ const ButtonComponent: React.FC<ButtonComponentProps> = ({
   
 
   return (
-    <button onClick={handleSubmit} type={submit ? "submit" : "button"} className={`${secondary ? "bg-slate-500" : "bg-blue-500"} ${disabled && "opacity-50 cursor-block"} w-full text-white p-2 rounded hover:opacity-50 transition px-4`}>
+    <button onClick={handleSubmit} type={submit ? "submit" : "button"} className={`${secondary ? "bg-slate-500" : "bg-blue-500"} ${disabled && "opacity-50 cursor-block"} w-full text-white p-2 rounded-lg font-bold hover:opacity-50 transition px-4`}>
       {name}
     </button>
   );

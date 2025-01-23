@@ -118,10 +118,12 @@ const Register = () => {
     setRecaptchaValue(value);
   };
   return (
-    <div className="flex items-center justify-center bg-none relative py-10" style={{ overflow: "hidden" }}>
+    <div className="flex items-center justify-center bg-none relative py-10 rounded-lg" style={{ overflow: "hidden" }}>
       <div className="bg-white flex flex-col rounded w-11/12 p-6 mt-[85px] relative max-w-[600px]">
-        <div className="flex items-center justify-start">
-          <img style={{ width: "200px" }} src="./HSHacks_Logo.png" alt="HSHacks_Logo" />
+        <div className="flex flex-col items-start justify-start py-5 gap-3">
+          <img style={{ width: "200px", height: "50px", objectFit: "cover" }} src="./HSHacks_Logo.png" alt="HSHacks_Logo" />
+          <p className="text-slate-400 font-bold pl-1 text-xs">This is the official registration form for HSHacks 2025. We currently accept no more than 170 signups. Please contact team@hshacks.org for any questions.</p>
+
         </div>
         <InformationComponent name={step == 0 ? "General Information" : step == 1 ? "Event Information" : "Other Information"} />
         {!isLoading ? (
@@ -150,7 +152,7 @@ const Register = () => {
                 <p className="text-slate-500 text-sm pb-2 py-2">Please read over the <Link style={{ color: "blue" }} href="/codeofconduct" target="_blank">HSHacks code of conduct</Link> before submiting</p>
               </div>
             )}
-            <div className="flex gap-2 w-full">
+            <div className="flex gap-2 w-full justify-start">
               {step != 0 && (
                 <ButtonComponent secondary name="Back" onClick={(e) => handlePreviousStep(e as any)} />
               )}

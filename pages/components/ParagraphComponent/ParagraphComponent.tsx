@@ -23,7 +23,7 @@ const ParagraphComponent: React.FC<ParagraphComponentInterface> = ({
   return (
     <div className='w-full'>
       <div className='mb-3'>
-        <div className="text-black flex gap-1 font-bold">
+        <div className="text-black flex gap-1 font-bold text-md text-slate-600">
           {question} 
           {required && (
             <p title="This field is required" style={{color: "red"}}>
