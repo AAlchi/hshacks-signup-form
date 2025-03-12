@@ -1,6 +1,6 @@
 import { NextApiRequest, NextApiResponse } from "next";
 import { initializeApp } from "firebase/app";
-import { addDoc, collection, doc, getFirestore, setDoc } from "firebase/firestore";
+import { doc, getFirestore, setDoc } from "firebase/firestore";
 import axios from "axios";
 const sendGrid = require("@sendgrid/mail")
 
@@ -26,7 +26,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
   }
 
   try {
-    const { dietaryRestrictions, email, experience, firstName, grade, laptop, lastName, otherInfo, shirtSize } = req.body;
+    const { dietaryRestrictions, email, experience, firstName, grade, laptop, lastName, otherInfo } = req.body;
 
     const requiredFields = [
       dietaryRestrictions,
@@ -36,8 +36,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
       grade,
       laptop,
       lastName,
-      otherInfo,
-      shirtSize
+      otherInfo
     ];
 
     const isFieldEmpty = requiredFields.some(field => field === null || field === undefined);
@@ -60,7 +59,6 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
       laptop,
       lastName,
       otherInfo,
-      shirtSize,
       createdAt: new Date(),
     });
 

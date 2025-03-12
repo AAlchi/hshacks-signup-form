@@ -79,18 +79,18 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
             subtext: "This year, we are only accepting participants in grades 9-12", 
           },
         },
-        {
-          group: 1,
-          type: "radio",
-          component: "RadioComponent",
-          required: false,
-          props: {
-            name: "shirtSize",
-            listOfNames: ["SM", "MD", "LG", "XL"],
-            question: "T-shirt size",
-            subtext: "While this field is optional, we highly recommend selecting an option to better help us with picking t-shirt sizes", 
-          },
-        },
+        // {
+        //   group: 1,
+        //   type: "radio",
+        //   component: "RadioComponent",
+        //   required: false,
+        //   props: {
+        //     name: "shirtSize",
+        //     listOfNames: ["SM", "MD", "LG", "XL"],
+        //     question: "T-shirt size",
+        //     subtext: "While this field is optional, we highly recommend selecting an option to better help us with picking t-shirt sizes", 
+        //   },
+        // },
         {
           group: 2,
           type: "text",

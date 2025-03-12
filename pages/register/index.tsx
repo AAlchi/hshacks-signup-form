@@ -18,8 +18,7 @@ interface FormData {
   email: string;
   laptop: string;
   experience: string;
-  grade: string;
-  shirtSize: string;
+  grade: string; 
   dietaryRestrictions: string;
   otherInfo: string;
 }
@@ -34,8 +33,7 @@ const Register = () => {
     "email": "",
     "laptop": "",
     "experience": "",
-    "grade": "",
-    "shirtSize": "",
+    "grade": "", 
     "dietaryRestrictions": "",
     "otherInfo": ""
   });
