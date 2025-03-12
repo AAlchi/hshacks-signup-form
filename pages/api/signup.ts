@@ -1,6 +1,6 @@
 import { NextApiRequest, NextApiResponse } from "next";
 import { initializeApp } from "firebase/app";
-import { addDoc, collection, getFirestore } from "firebase/firestore";
+import { addDoc, collection, doc, getFirestore, setDoc } from "firebase/firestore";
 import axios from "axios";
 const sendGrid = require("@sendgrid/mail")
 
@@ -28,8 +28,30 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
   try {
     const { dietaryRestrictions, email, experience, firstName, grade, laptop, lastName, otherInfo, shirtSize } = req.body;
 
-    const docRef = await addDoc(collection(db, "users"), {
-      uid: Math.random() + email + firstName,
+    const requiredFields = [
+      dietaryRestrictions,
+      email,
+      experience,
+      firstName,
+      grade,
+      laptop,
+      lastName,
+      otherInfo,
+      shirtSize
+    ];
+
+    const isFieldEmpty = requiredFields.some(field => field === null || field === undefined);
+
+    if (isFieldEmpty) {
+      return res.status(400).send('One or more fields are empty');
+    }
+
+    const userId = firstName + email + Math.random();
+
+    const docRef = doc(db, "users", userId);
+    
+    await setDoc(docRef, {
+      uid: userId,
       dietaryRestrictions,
       email,
       experience,
